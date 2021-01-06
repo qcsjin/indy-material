@@ -126,7 +126,7 @@ services:
       - NAME=Alice
       - EMAIL=alice@faber.edu
       - PASSWORD=123
-      - USERNAME=alice
+      - USERNAME=a
       - PUBLIC_DID_ENDPOINT=173.17.0.150:3000
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
@@ -152,7 +152,7 @@ services:
       - ICON_SRC=http://www.clker.com/cliparts/g/l/R/7/h/u/teamstijl-person-icon-blue-hi.png
       - THEME=BurlyWood
       - PORT=3001
-      - NAME=Bob
+      - NAME=b
       - EMAIL=bob@byu.edu
       - PASSWORD=123
       - USERNAME=bob
