@@ -5,7 +5,8 @@ Indy使用术语“代理”表示与其他身份（通过DID）交互的软件�
 	爱丽丝（Alice），曾就读于Faber大学，想在Acme公司求职
 	费伯（Faber）大学，授予爱丽丝学位
 	Acme，需要Alice成绩单的副本
-浏览器进入docker（https://labs.play-with-docker.com/）登录后点击开始，选择Add an Instance启动终端，在终端中输入：
+浏览器进入docker（https://labs.play-with-docker.com/）
+启动终端，在终端中输入：
 $  git clone https://github.com/hyperledger/education #下载代码
 $  cd education/LFS171x/indy-material/nodejs #进入运行代码的文件位置
 $  ./manage build #构建组件
