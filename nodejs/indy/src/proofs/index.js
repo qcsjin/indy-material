@@ -27,23 +27,23 @@ exports.getProofRequests = async function(force) {
             },
             requested_predicates: {}
         };
-        let transcriptCredDef = await indy.issuer.getCredDefByTag('MyTranscript');
-        if(transcriptCredDef) {
-            proofRequests['Transcript-Data'] = {
-                name: 'Transcript-Data',
+        let MedicalrecordCredDef = await indy.issuer.getCredDefByTag('My medical record');
+        if(MedicalrecordCredDef) {
+            proofRequests['Medical record-Data'] = {
+                name: 'Medical record-Data',
                 version: '0.1',
                 requested_attributes: {
                     'attr1_referent': {
-                        'name': 'degree',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'gender',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr2_referent': {
-                        'name': 'status',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'age',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr3_referent': {
-                        'name': 'year',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'eid',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     }
                 },
                 requested_predicates: {}
