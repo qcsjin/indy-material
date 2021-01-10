@@ -173,7 +173,7 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  Healthcare regulators:
+  regulators:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
