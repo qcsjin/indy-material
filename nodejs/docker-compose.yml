@@ -229,17 +229,17 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  insurance company:
+   insurer:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
       - ICON_SRC=https://cdn1.iconfinder.com/data/icons/data-science-flat-1/64/insurance-detecting-fraud-data-science-company-256.png
       - THEME=Coral
       - PORT=3004
-      - NAME=insurance company
+      - NAME= insurer
       - EMAIL=12345@qq.com
       - PASSWORD=123
-      - USERNAME=insurance company
+      - USERNAME= insurer
       - PUBLIC_DID_ENDPOINT=173.17.0.190:3004
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
