@@ -104,14 +104,14 @@ async function setupSteward() {
 
 }
 
-async function issueEHealthIdCredential() {
+async function issuehealthIdCredential() {
     let schemaName = 'Government-ID';
     let schemaVersion = '1.1';
     let signatureType = 'CL';
     let healthIdSchema;
     let healthIdSchemaId = `${stewardDid}:2:${schemaName}:${schemaVersion}`;
     try {
-        govIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
+        healthIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
     } catch(e) {
         [healthIdSchemaId, healthIdSchema] = await sdk.issuerCreateSchema(stewardDid, schemaName, schemaVersion, [
             'name',
@@ -121,7 +121,7 @@ async function issueEHealthIdCredential() {
         ]);
 
         await indy.issuer.sendSchema(await indy.pool.get(), stewardWallet, stewardDid, healthIdSchema);
-        govIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
+        healthIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
     }
 
     let healthIdCredDef;
@@ -192,7 +192,9 @@ async function issueGovernmentIdCredential() {
 
 
 
-
+exports.gethealthIdCredDefId = async function() {
+    return await exports.getEndpointDidAttribute('healthIdCredDefId');
+};
 
 exports.getGovIdCredDefId = async function() {
     return await exports.getEndpointDidAttribute('govIdCredDefId');
