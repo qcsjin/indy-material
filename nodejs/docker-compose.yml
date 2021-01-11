@@ -113,7 +113,7 @@ services:
   #
   # Agents
   #
-  alice:
+  Patient:
     image: indy-agentjs
     build:
       context: .
@@ -166,7 +166,7 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.160
@@ -194,7 +194,7 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.170
@@ -222,7 +222,7 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.180
@@ -250,7 +250,7 @@ services:
       - node2
       - node3
       - node4
-      - alice
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.190
