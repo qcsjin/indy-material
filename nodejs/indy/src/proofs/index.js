@@ -3,8 +3,8 @@ const sdk = require('indy-sdk');
 const indy = require('../../index.js');
 
 const MESSAGE_TYPES = {
-    REQUEST : "urn:sovrin:agent:message_type:sovrin.org/proof_request",
-    PROOF : "urn:sovrin:agent:message_type:sovrin.org/proof"
+    REQUEST : "proof_request",
+    PROOF : "proof"
 };
 
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
