@@ -12,18 +12,18 @@ const config = {
     port: process.env.PORT || 3000,
 
     // Optional: Give your wallet a unique name
-    walletName: `${process.env.USERNAME || 'Stitch'}_wallet`,
+    walletName: `${process.env.USERNAME || 'Patient'}_wallet`,
 
     // Optional: Give your pool config a unique name
     poolName: process.env.POOL_NAME || 'pool1',
 
     // This information is used to issue your "Government ID"
     userInformation: {
-        name: process.env.NAME || 'Stitch',
+        name: process.env.NAME || 'Patient',
         email: process.env.EMAIL || '123456789@qq.com',
         eid: process.env.TAX_ID || '123456789',
         icon_src: process.env.ICON_SRC || 'https://cdn1.iconfinder.com/data/icons/business-finance-vol-3-39/512/id_card_badge_identity-256.png',
-        username: process.env.USERNAME || 'Stitch',
+        username: process.env.USERNAME || 'Patient',
         password: process.env.PASSWORD || '123'
     },
 
