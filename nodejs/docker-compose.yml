@@ -180,10 +180,10 @@ services:
       - ICON_SRC=https://cdn1.iconfinder.com/data/icons/monoflat-series-09/322/university-search-institution-analysis-bank-financial-256.png
       - THEME=OliveDrab
       - PORT=3002
-      - NAME=Healthcare regulators
+      - NAME=regulators
       - EMAIL=1234567@qq.com
       - PASSWORD=123
-      - USERNAME=Healthcare regulators
+      - USERNAME=regulators
       - PUBLIC_DID_ENDPOINT=173.17.0.170:3002
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
