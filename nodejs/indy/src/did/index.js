@@ -162,7 +162,7 @@ async function issueGovernmentIdCredential() {
         [govIdSchemaId, govIdSchema] = await sdk.issuerCreateSchema(stewardDid, schemaName, schemaVersion, [
             'name',
             'email',
-            'tax_id'
+            'eid'
         ]);
 
         await indy.issuer.sendSchema(await indy.pool.get(), stewardWallet, stewardDid, govIdSchema);
@@ -183,7 +183,7 @@ async function issueGovernmentIdCredential() {
     let govIdValues = {
         name: {"raw": config.userInformation.name, "encoded": indy.credentials.encode(config.userInformation.name)},
         email: {"raw": config.userInformation.email, "encoded": indy.credentials.encode(config.userInformation.email)},
-        tax_id: {"raw": config.userInformation.tax_id, "encoded": indy.credentials.encode(config.userInformation.tax_id)}
+        eid: {"raw": config.userInformation.eid, "encoded": indy.credentials.encode(config.userInformation.eid)}
     };
 
     let [govIdCredential] = await sdk.issuerCreateCredential(stewardWallet, govIdCredOffer, govIdCredRequest, govIdValues);
