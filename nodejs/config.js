@@ -12,7 +12,7 @@ const config = {
     port: process.env.PORT || 3000,
 
     // Optional: Give your wallet a unique name
-    walletName: `${process.env.USERNAME || 'alice'}_wallet`,
+    walletName: `${process.env.USERNAME || 'Stitch'}_wallet`,
 
     // Optional: Give your pool config a unique name
     poolName: process.env.POOL_NAME || 'pool1',
