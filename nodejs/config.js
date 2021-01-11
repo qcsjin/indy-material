@@ -19,19 +19,11 @@ const config = {
 
     // This information is used to issue your "Government ID"
     userInformation: {
-<<<<<<< HEAD
         name: process.env.NAME || 'Patient',
         email: process.env.EMAIL || '123456789@qq.com',
         eid: process.env.TAX_ID || '123456789',
         icon_src: process.env.ICON_SRC || 'https://cdn1.iconfinder.com/data/icons/business-finance-vol-3-39/512/id_card_badge_identity-256.png',
         username: process.env.USERNAME || 'Patient',
-=======
-        name: process.env.NAME || 'Alice Garcia',
-        email: process.env.EMAIL || 'alice@faber.edu',
-        tax_id: process.env.TAX_ID || '123-45-6789',
-        icon_src: process.env.ICON_SRC || 'https://cdn3.iconfinder.com/data/icons/black-easy/512/538738-school_512x512.png',
-        username: process.env.USERNAME || 'alice',
->>>>>>> parent of 65aaaf2... Update config.js
         password: process.env.PASSWORD || '123'
     },
 
