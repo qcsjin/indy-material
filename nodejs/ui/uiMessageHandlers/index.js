@@ -3,15 +3,15 @@ const indy = require('../../indy');
 const sockets = require('../sockets');
 
 const MESSAGE_TYPES = {
-    SEND_MESSAGE: "urn:sovrin:agent:message_type:sovrin.org/ui/send_message",
-    SEND_CONNECTION_REQUEST: "urn:sovrin:agent:message_type:sovrin.org/ui/send_connection_request",
-    ISSUER_CREATE_SCHEMA: "urn:sovrin:agent:message_type:sovrin.org/ui/issuer_create_schema",
-    ISSUER_CREATE_CRED_DEF: "urn:sovrin:agent:message_type:sovrin.org/ui/issuer_create_credential_definition",
-    ISSUER_SEND_CRED_OFFER: "urn:sovrin:agent:message_type:sovrin.org/ui/issuer_send_credential_offer",
-    CREDENTIALS_ACCEPT_OFFER: "urn:sovrin:agent:message_type:sovrin.org/ui/credentials_accept_offer",
-    CREDENTIALS_REJECT_OFFER: "urn:sovrin:agent:message_type:sovrin.org/ui/credentials_reject_offer",
-    CONNECTIONS_ACCEPT_REQUEST: "urn:sovrin:agent:message_type:sovrin.org/ui/connections_accept_request",
-    CONNECTIONS_REJECT_REQUEST: "urn:sovrin:agent:message_type:sovrin.org/ui/connections_reject_request"
+    SEND_MESSAGE: "send_message",
+    SEND_CONNECTION_REQUEST: "send_connection_request",
+    ISSUER_CREATE_SCHEMA: "issuer_create_schema",
+    ISSUER_CREATE_CRED_DEF: "issuer_create_credential_definition",
+    ISSUER_SEND_CRED_OFFER: "issuer_send_credential_offer",
+    CREDENTIALS_ACCEPT_OFFER: "credentials_accept_offer",
+    CREDENTIALS_REJECT_OFFER: "credentials_reject_offer",
+    CONNECTIONS_ACCEPT_REQUEST: "connections_accept_request",
+    CONNECTIONS_REJECT_REQUEST: "connections_reject_request"
 };
 
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
