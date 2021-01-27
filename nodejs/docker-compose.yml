@@ -125,11 +125,10 @@ services:
       - THEME=DarkGray
       - PORT=3000
       - NAME=Stitch
-      - AGE=24
-      - GENDER=MAN
+
       - EMAIL=123456789@qq.com
       - PASSWORD=123
-      - STATUS=Patient
+      - USERNAME=Patient
       - PUBLIC_DID_ENDPOINT=173.17.0.150:3000
       - RUST_LOG=${RUST_LOG}
       - TEST_POOL_IP=${TEST_POOL_IP}
