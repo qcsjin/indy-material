@@ -104,52 +104,6 @@ async function setupSteward() {
 
 }
 
-async function issuehealthIdCredential() {
-    let schemaName = 'Government-ID';
-    let schemaVersion = '1.1';
-    let signatureType = 'CL';
-    let healthIdSchema;
-    let healthIdSchemaId = `${stewardDid}:2:${schemaName}:${schemaVersion}`;
-    try {
-        healthIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
-    } catch(e) {
-        [healthIdSchemaId, healthIdSchema] = await sdk.issuerCreateSchema(stewardDid, schemaName, schemaVersion, [
-            'name',
-            'gender',
-            'age',
-            'status'
-        ]);
-
-        await indy.issuer.sendSchema(await indy.pool.get(), stewardWallet, stewardDid, healthIdSchema);
-        healthIdSchema = await indy.issuer.getSchema(healthIdSchemaId);
-    }
-
-    let healthIdCredDef;
-    [healthIdCredDefId, healthIdCredDef] = await sdk.issuerCreateAndStoreCredentialDef(stewardWallet, stewardDid, healthIdSchema, 'healthID', signatureType, '{"support_revocation": false}');
-    await indy.issuer.sendCredDef(await indy.pool.get(), stewardWallet, stewardDid, healthIdCredDef);
-
-    exports.setEndpointDidAttribute('healthIdCredDefId', healthIdCredDefId);
-
-
-    let healthIdCredOffer = await sdk.issuerCreateCredentialOffer(stewardWallet, healthIdCredDefId);
-    let [healthIdCredRequest, healthIdRequestMetadata] = await sdk.proverCreateCredentialReq(await indy.wallet.get(), endpointDid, healthIdCredOffer, healthIdCredDef, await indy.did.getEndpointDidAttribute('master_secret_id'));
-
-
-    let healthIdValues = {
-        name: {"raw": config.userInformation.name, "encoded": indy.credentials.encode(config.userInformation.name)},
-        gender: {"raw": config.userInformation.gender, "encoded": indy.credentials.encode(config.userInformation.gender)},
-        age: {"raw": config.userInformation.age, "encoded": indy.credentials.encode(config.userInformation.age)},
-        status: {"raw": config.userInformation.status, "encoded": indy.credentials.encode(config.userInformation.status)}
-    };
-
-    let [healthIdCredential] = await sdk.issuerCreateCredential(stewardWallet, healthIdCredOffer, healthIdCredRequest, healthIdValues);
-    let res = await sdk.proverStoreCredential(await indy.wallet.get(), null, healthIdRequestMetadata, healthIdCredential, healthIdCredDef);
-}
-
-
-
-
-
 async function issueGovernmentIdCredential() {
     let schemaName = 'Government-ID';
     let schemaVersion = '1.1';
