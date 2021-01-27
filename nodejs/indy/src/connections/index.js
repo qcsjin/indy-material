@@ -9,10 +9,10 @@ urn:jwm:sovrin.org/connections/v1/offer
  */
 
 const MESSAGE_TYPES = {
-    OFFER : "urn:sovrin:agent:message_type:sovrin.org/connection_offer",
-    REQUEST : "urn:sovrin:agent:message_type:sovrin.org/connection_request",
-    RESPONSE : "urn:sovrin:agent:message_type:sovrin.org/connection_response",
-    ACKNOWLEDGE : "urn:sovrin:agent:message_type:sovrin.org/connection_acknowledge"
+    OFFER : "connection_offer",
+    REQUEST : "connection_request",
+    RESPONSE : "connection_response",
+    ACKNOWLEDGE : "connection_acknowledge"
 };
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
 
