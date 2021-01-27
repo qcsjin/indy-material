@@ -121,11 +121,9 @@ services:
     command: "bash -c 'sleep 10; npm start'"
     environment:
       - ICON_SRC=https://cdn2.iconfinder.com/data/icons/scenarium-vol-4/128/006_avatar_worker_employee_man_account_manager_clerk-256.png
-      # patient:https://cdn3.iconfinder.com/data/icons/virus-transmission-flat/48/Patient-512.png
       - THEME=DarkGray
       - PORT=3000
       - NAME=Stitch
-
       - EMAIL=123456789@qq.com
       - PASSWORD=123
       - USERNAME=Patient
