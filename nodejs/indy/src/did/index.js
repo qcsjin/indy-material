@@ -146,10 +146,6 @@ async function issueGovernmentIdCredential() {
 
 
 
-exports.gethealthIdCredDefId = async function() {
-    return await exports.getEndpointDidAttribute('healthIdCredDefId');
-};
-
 exports.getGovIdCredDefId = async function() {
     return await exports.getEndpointDidAttribute('govIdCredDefId');
 };
