@@ -58,12 +58,12 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
         let value;
         switch(attr) {
             case "name":
-                value = await indy.pairwise.getAttr(theirDid, 'name') || "Alice";
+                value = await indy.pairwise.getAttr(theirDid, '姓名') || "张三";
                 break;
-            case "gender":
-                value = "female";
+            case "性别":
+                value = "男";
                 break;
-            case "age":
+            case "年龄":
                 value = "24";
                 break;
             case "eid":
@@ -73,8 +73,9 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
                 value = "a";
                 break;
             case "Conclusion and Advice":
-                value = "b";
+                value = "";
                 break;
+            case ""
             default:
                 value = "someValue";
         }
