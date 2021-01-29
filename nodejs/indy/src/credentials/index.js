@@ -75,7 +75,6 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
             case "Conclusion and Advice":
                 value = "c";
                 break;
-            case ""
             default:
                 value = "someValue";
         }
