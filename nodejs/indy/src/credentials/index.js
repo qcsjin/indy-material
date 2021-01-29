@@ -3,9 +3,9 @@ const sdk = require('indy-sdk');
 const indy = require('../../index.js');
 
 const MESSAGE_TYPES = {
-    OFFER: "urn:sovrin:agent:message_type:sovrin.org/credential_offer",
-    REQUEST: "urn:sovrin:agent:message_type:sovrin.org/credential_request",
-    CREDENTIAL: "urn:sovrin:agent:message_type:sovrin.org/credential"
+    OFFER: "credential_offer",
+    REQUEST: "credential_request",
+    CREDENTIAL: "credential"
 };
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
 
