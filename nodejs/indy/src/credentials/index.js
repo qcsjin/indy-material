@@ -73,7 +73,7 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
                 value = "a";
                 break;
             case "Conclusion and Advice":
-                value = "";
+                value = "c";
                 break;
             case ""
             default:
