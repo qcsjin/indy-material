@@ -113,7 +113,7 @@ services:
   #
   # Agents
   #
-  Stitch:
+  Patient:
     image: indy-agentjs
     build:
       context: .
@@ -123,7 +123,7 @@ services:
       - ICON_SRC=https://cdn3.iconfinder.com/data/icons/virus-transmission-flat/48/Patient-512.png
       - THEME=DarkGray
       - PORT=3000
-      - NAME=Stitch
+      - NAME=Patient
       - EMAIL=123456789@qq.com
       - PASSWORD=123
       - USERNAME=Patient
@@ -166,7 +166,7 @@ services:
       - node2
       - node3
       - node4
-      - Stitch
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.160
@@ -194,7 +194,7 @@ services:
       - node2
       - node3
       - node4
-      - Stitch
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.170
@@ -222,7 +222,7 @@ services:
       - node2
       - node3
       - node4
-      - Stitch
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.180
@@ -250,7 +250,7 @@ services:
       - node2
       - node3
       - node4
-      - Stitch
+      - Patient
     networks:
       services:
         ipv4_address: 173.17.0.190
