@@ -74,6 +74,27 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
                 break;
             case "Conclusion and Advice":
                 value = "c";
+                break;            
+            case "Address":
+                value = "HuNan Changsha";
+                break;
+            case "Housing information":
+                value = "Property area:150 Square meter,  completion date：2015.10,  mortgage information：Unsecured";
+                break;            
+            case "landnum":
+                value = "L123456789";
+                break;
+            case "company":
+                value = "ABC Company";
+                break;
+            case "Entry year":
+                value = "2019.6";
+                break;
+            case "position":
+                value = "software engineer";
+                break;
+            case "income":
+                value = "15k";
                 break;
             default:
                 value = "someValue";
