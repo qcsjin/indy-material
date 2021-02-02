@@ -70,17 +70,20 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
                 value = "123456789";
                 break;
             case "The health examination report":
-                value = "a";
+                value = "Helicobacter pylori positive,...";
                 break;
             case "Conclusion and Advice":
-                value = "c";
+                value = "Prevent gastroduodenal ulcer,...";
                 break;            
             case "Address":
                 value = "HuNan Changsha";
                 break;
             case "Housing information":
-                value = "   Property area:150 Square meter,                mortgage information：Unsecured";
-                break;            
+                value = "150 Square meter, Second floor,...";
+                break; 
+            case "mortgage information":
+                value = "Unsecured";
+                break;
             case "Landnum":
                 value = "L123456789";
                 break;
