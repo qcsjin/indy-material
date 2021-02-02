@@ -120,7 +120,7 @@ services:
       dockerfile: agent.dockerfile
     command: "bash -c 'sleep 10; npm start'"
     environment:
-      - ICON_SRC=https://cdn3.iconfinder.com/data/icons/virus-transmission-flat/48/Patient-512.png
+      - ICON_SRC=https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/8_avatar-256.png
       - THEME=DarkGray
       - PORT=3000
       - NAME=Stitch
