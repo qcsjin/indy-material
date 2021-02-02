@@ -3,8 +3,8 @@ const sdk = require('indy-sdk');
 const indy = require('../../index.js');
 
 const MESSAGE_TYPES = {
-    REQUEST : "urn:sovrin:agent:message_type:sovrin.org/proof_request",
-    PROOF : "urn:sovrin:agent:message_type:sovrin.org/proof"
+    REQUEST : "proof_request",
+    PROOF : "proof"
 };
 
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
@@ -34,7 +34,7 @@ exports.getProofRequests = async function(force) {
                 version: '0.1',
                 requested_attributes: {
                     'attr1_referent': {
-                        'name': 'gender',
+                        'name': 'name',
                         'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr2_referent': {
@@ -42,7 +42,11 @@ exports.getProofRequests = async function(force) {
                         'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr3_referent': {
-                        'name': 'eid',
+                        'name': 'gender',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
+                    }
+                     'attr3_referent': {
+                        'name': 'Conclusion and Advice',
                         'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     }
                 },
@@ -52,6 +56,40 @@ exports.getProofRequests = async function(force) {
     }
     return proofRequests;
 };
+
+
+        let PropertyCredDef = await indy.issuer.getCredDefByTag('My property ownership certificate');
+        if(PropertyCredDef) {
+            proofRequests['Property-Data'] = {
+                name: 'Property-Data',
+                version: '0.3',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'address',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'Housing information',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    }
+                     'attr3_referent': {
+                        'name': 'landnum',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }
+    }
+    return proofRequests;
+};
+
+
+
 exports.sendRequest = async function(myDid, theirDid, proofRequestId, otherProofRequest) {
     let proofRequest;
     if(proofRequestId === "proofRequestOther") {
