@@ -69,7 +69,7 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
             case "eid":
                 value = "123456789";
                 break;
-            case "the health examination report":
+            case "The health examination report":
                 value = "a";
                 break;
             case "Conclusion and Advice":
@@ -79,25 +79,25 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
                 value = "HuNan Changsha";
                 break;
             case "Housing information":
-                value = "Property area:150 Square meter,  completion date：2015.10,  mortgage information：Unsecured";
+                value = "   Property area:150 Square meter,                mortgage information：Unsecured";
                 break;            
-            case "landnum":
+            case "Landnum":
                 value = "L123456789";
                 break;
-            case "company":
+            case "Company":
                 value = "ABC Company";
                 break;
             case "Entry year":
                 value = "2019.6";
                 break;
-            case "position":
+            case "Position":
                 value = "software engineer";
                 break;
-            case "income":
+            case "Income":
                 value = "15k";
                 break;
             default:
-                value = "someValue";
+                value = "UNKNOWN";
         }
         credentialValues[attr] = {raw: value, encoded: exports.encode(value)};
     }
