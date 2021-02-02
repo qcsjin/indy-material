@@ -45,7 +45,7 @@ exports.getProofRequests = async function(force) {
                         'name': 'gender',
                         'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     }
-                     'attr3_referent': {
+                    'attr4_referent': {
                         'name': 'Conclusion and Advice',
                         'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     }
@@ -76,7 +76,7 @@ exports.getProofRequests = async function(force) {
                         'name': 'Housing information',
                         'restrictions': [{'cred_def_id': PropertyCredDef.id}]
                     }
-                     'attr3_referent': {
+                    'attr4_referent': {
                         'name': 'Landnum',
                         'restrictions': [{'cred_def_id': PropertyCredDef.id}]
                     }
