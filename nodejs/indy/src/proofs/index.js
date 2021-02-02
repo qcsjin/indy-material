@@ -79,6 +79,29 @@ exports.getProofRequests = async function(force) {
                 requested_predicates: {}
             }
         }
+        let IncomeCredDef = await indy.issuer.getCredDefByTag('My income proof');
+        if(IncomeCredDef) {
+            proofRequests['Income-Data'] = {
+                name: 'Income-Data',
+                version: '0.4',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'Company',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'Income',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }        
+        
     }
     return proofRequests;
 };
