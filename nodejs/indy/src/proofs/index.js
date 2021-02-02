@@ -53,10 +53,7 @@ exports.getProofRequests = async function(force) {
                 requested_predicates: {}
             }
         }
-    }
-    return proofRequests;
-};
-let PropertyCredDef = await indy.issuer.getCredDefByTag('My property ownership certificate');
+        let PropertyCredDef = await indy.issuer.getCredDefByTag('My property ownership certificate');
         if(PropertyCredDef) {
             proofRequests['Property-Data'] = {
                 name: 'Property-Data',
@@ -85,6 +82,7 @@ let PropertyCredDef = await indy.issuer.getCredDefByTag('My property ownership c
     }
     return proofRequests;
 };
+
 
 
 
