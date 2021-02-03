@@ -145,7 +145,7 @@ services:
 
   #
   #
-  Doctor:
+  Hospital:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
@@ -173,7 +173,7 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  regulators:
+  Government:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
@@ -201,7 +201,7 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  pharmacy:
+  Company:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
@@ -229,7 +229,7 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  insurer:
+  Bank:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
