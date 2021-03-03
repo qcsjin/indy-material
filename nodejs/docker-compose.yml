@@ -152,7 +152,7 @@ services:
       - ICON_SRC=https://cdn3.iconfinder.com/data/icons/virus-transmission-flat/48/Doctor-256.png
       - THEME=BurlyWood
       - PORT=3001
-      - NAME=Doctor
+      - NAME=Hospital
       - EMAIL=12345678@qq.com
       - PASSWORD=123
       - USERNAME=Doctor
@@ -180,7 +180,7 @@ services:
       - ICON_SRC=https://cdn1.iconfinder.com/data/icons/monoflat-series-09/322/university-search-institution-analysis-bank-financial-256.png
       - THEME=OliveDrab
       - PORT=3002
-      - NAME=regulators
+      - NAME=Government
       - EMAIL=1234567@qq.com
       - PASSWORD=123
       - USERNAME=regulators
@@ -201,14 +201,14 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  Company:
+  Company A:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
       - ICON_SRC=https://cdn1.iconfinder.com/data/icons/supermarket-cafe-and-stores/50/14-256.png
       - THEME=LightSteelBlue
       - PORT=3003
-      - NAME=pharmacy
+      - NAME=Company A
       - EMAIL=123456@qq.com
       - PASSWORD=123
       - USERNAME=pharmacy
@@ -229,14 +229,14 @@ services:
     volumes:
       - node1-data:/home/indy/ledger
 
-  Bank:
+  Financial Institutions:
     image: indy-agentjs
     command: "bash -c 'sleep 10; npm start'"
     environment:
       - ICON_SRC=https://cdn1.iconfinder.com/data/icons/data-science-flat-1/64/insurance-detecting-fraud-data-science-company-256.png
       - THEME=Coral
       - PORT=3004
-      - NAME=insurer
+      - NAME=Financial Institutions
       - EMAIL=12345@qq.com
       - PASSWORD=123
       - USERNAME=insurer
