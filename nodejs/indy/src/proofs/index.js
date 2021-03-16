@@ -3,8 +3,8 @@ const sdk = require('indy-sdk');
 const indy = require('../../index.js');
 
 const MESSAGE_TYPES = {
-    REQUEST : "urn:sovrin:agent:message_type:sovrin.org/proof_request",
-    PROOF : "urn:sovrin:agent:message_type:sovrin.org/proof"
+    REQUEST : "proof_request",
+    PROOF : "proof"
 };
 
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
@@ -27,31 +27,88 @@ exports.getProofRequests = async function(force) {
             },
             requested_predicates: {}
         };
-        let transcriptCredDef = await indy.issuer.getCredDefByTag('MyTranscript');
-        if(transcriptCredDef) {
-            proofRequests['Transcript-Data'] = {
-                name: 'Transcript-Data',
+        let MedicalrecordCredDef = await indy.issuer.getCredDefByTag('My medical record');
+        if(MedicalrecordCredDef) {
+            proofRequests['Medical record-Data'] = {
+                name: 'Medical record-Data',
                 version: '0.1',
                 requested_attributes: {
                     'attr1_referent': {
-                        'name': 'degree',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr2_referent': {
-                        'name': 'status',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'age',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     },
                     'attr3_referent': {
-                        'name': 'year',
-                        'restrictions': [{'cred_def_id': transcriptCredDef.id}]
+                        'name': 'gender',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
+                    },
+                    'attr4_referent': {
+                        'name': 'Conclusion and Advice',
+                        'restrictions': [{'cred_def_id': MedicalrecordCredDef.id}]
                     }
                 },
                 requested_predicates: {}
             }
         }
+        let PropertyCredDef = await indy.issuer.getCredDefByTag('My property ownership certificate');
+        if(PropertyCredDef) {
+            proofRequests['Property-Data'] = {
+                name: 'Property-Data',
+                version: '0.3',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'Address',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'mortgage information',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    },
+                    'attr4_referent': {
+                        'name': 'Landnum',
+                        'restrictions': [{'cred_def_id': PropertyCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }
+        let IncomeCredDef = await indy.issuer.getCredDefByTag('My income proof');
+        if(IncomeCredDef) {
+            proofRequests['Income-Data'] = {
+                name: 'Income-Data',
+                version: '0.4',
+                requested_attributes: {
+                    'attr1_referent': {
+                        'name': 'name',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    },
+                    'attr2_referent': {
+                        'name': 'Company',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    },
+                    'attr3_referent': {
+                        'name': 'Income',
+                        'restrictions': [{'cred_def_id': IncomeCredDef.id}]
+                    }
+                },
+                requested_predicates: {}
+            }
+        }        
+        
     }
     return proofRequests;
 };
+
+
+
+
 exports.sendRequest = async function(myDid, theirDid, proofRequestId, otherProofRequest) {
     let proofRequest;
     if(proofRequestId === "proofRequestOther") {

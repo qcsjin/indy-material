@@ -3,9 +3,9 @@ const sdk = require('indy-sdk');
 const indy = require('../../index.js');
 
 const MESSAGE_TYPES = {
-    OFFER: "urn:sovrin:agent:message_type:sovrin.org/credential_offer",
-    REQUEST: "urn:sovrin:agent:message_type:sovrin.org/credential_request",
-    CREDENTIAL: "urn:sovrin:agent:message_type:sovrin.org/credential"
+    OFFER: "credential_offer",
+    REQUEST: "credential_request",
+    CREDENTIAL: "credential"
 };
 exports.MESSAGE_TYPES = MESSAGE_TYPES;
 
@@ -58,25 +58,49 @@ exports.acceptRequest = async function(theirDid, encryptedMessage) {
         let value;
         switch(attr) {
             case "name":
-                value = await indy.pairwise.getAttr(theirDid, 'name') || "Alice";
+                value = await indy.pairwise.getAttr(theirDid, 'name') || "Stitch";
                 break;
-            case "degree":
-                value = "Bachelor of Science, Marketing";
+            case "gender":
+                value = "male";
                 break;
-            case "status":
-                value = "graduated";
+            case "age":
+                value = "24";
                 break;
-            case "ssn":
-                value = "123-45-6789";
+            case "eid":
+                value = "123456789";
                 break;
-            case "year":
-                value = "2015";
+            case "The health examination report":
+                value = "Helicobacter pylori positive,...";
                 break;
-            case "average":
-                value = "5";
+            case "Conclusion and Advice":
+                value = "Prevent gastroduodenal ulcer,...";
+                break;            
+            case "Address":
+                value = "HuNan Changsha";
+                break;
+            case "Housing information":
+                value = "150 Square meter, Second floor,...";
+                break; 
+            case "mortgage information":
+                value = "Unsecured";
+                break;
+            case "Landnum":
+                value = "L123456789";
+                break;
+            case "Company":
+                value = "ABC Company";
+                break;
+            case "Entry year":
+                value = "2019.6";
+                break;
+            case "Position":
+                value = "software engineer";
+                break;
+            case "Income":
+                value = "15k";
                 break;
             default:
-                value = "someValue";
+                value = "UNKNOWN";
         }
         credentialValues[attr] = {raw: value, encoded: exports.encode(value)};
     }
