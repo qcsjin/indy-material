@@ -2,6 +2,15 @@
 <html>
     <head>
         <title><%=name%>'s Agent</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-klassy-cafe.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
         <link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3pro.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -153,17 +162,34 @@
             ].reverse();
         </script>
 
-        <div id="menubar" class="w3-bar w3-theme">
-            <!--<a onclick="document.getElementById('aboutModel').style.display='block'" class="w3-right w3-bar-item w3-button w3-padding-16">About</a>-->
-            <a href="/logout" class="w3-right w3-bar-item w3-button w3-padding-16">Logout</a>
-            <a class="w3-right w3-bar-item w3-padding-16">Welcome <%=name%></a>
-            <a href=""><img class="w3-left w3-bar-item" width="55px" height="55px" src="/images/sovrinIcon.png"></a>
-            <a href="#relationships" id="relationships_link" class="w3-left w3-bar-item w3-button w3-padding-16 tab_link" onclick="showTab('relationships')" >Relationships</a>
-            <a href="#credentials" id="credentials_link" class="w3-left w3-bar-item w3-button w3-padding-16 tab_link" onclick="showTab('credentials')" >Credentials</a>
-            <a href="#proofs" id="proofs_link" class="w3-left w3-bar-item w3-button w3-padding-16 tab_link" onclick="showTab('proofs')" >Proof Requests</a>
-           <!-- <a href="#issuing" id="issuing_link" class="w3-left w3-bar-item w3-button w3-padding-16 tab_link" onclick="showTab('issuing')" >Issuing</a> -->
-            
-            <li class="submenu w3-left w3-bar-item  tab_link">
+       <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/indy-logo.png">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">主页</a></li>
+                        <li class="scroll-to-section w3-left w3-bar-item  tab_link"><a href="#relationships" onclick="showTab('relationships')"  id="relationships_link">连接</a></li>
+                           
+                    <!-- 
+                        <li class="submenu">
+                            <a href="javascript:;">Drop Down</a>
+                            <ul>
+                                <li><a href="#">Drop Down Page 1</a></li>
+                                <li><a href="#">Drop Down Page 2</a></li>
+                                <li><a href="#">Drop Down Page 3</a></li>
+                            </ul>
+                        </li>
+                    -->
+                        <li class="scroll-to-section w3-left w3-bar-item  tab_link"><a href="#credentials" id="credentials_link"  onclick="showTab('credentials')">已有凭证</a></li>
+                        <li class="scroll-to-section w3-left w3-bar-item  tab_link"><a href="#proofs" id="proofs_link" onclick="showTab('proofs')">证明请求</a></li> 
+                        <li class="submenu w3-left w3-bar-item  tab_link">
                             <a href="#issuing" id="issuing_link" onclick="showTab('issuing')">发布凭证</a>
                             <ul>
                                 <li><a href="#issuing1" id="issuing_link" onclick="showTab('issuing1')">发布凭证模板</a></li>
@@ -171,9 +197,21 @@
                                 <li><a href="#issuing3" id="issuing_link" onclick="showTab('issuing3')">发布凭证</a></li>
                             </ul>
                         </li>
-            
-            <a href="#messages" id="messages_link" class="w3-left w3-bar-item w3-button w3-padding-16 tab_link" onclick="showTab('messages')" >Messages</a>
+                        <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
+                        <li class="scroll-to-section  w3-left w3-bar-item  tab_link"><a href="#reservation" onclick="showTab('messages')">消息列表</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
         </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+
         <!--<div class="w3-container w3-card" style="position:fixed;bottom:52px;float:right; right:50px;width:300px;z-index:99;background:white;">-->
             <!--<h5>Chat with Andrew</h5>-->
             <!--<chat-window-->
@@ -279,6 +317,28 @@
             }
 
         </script>
+        <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 
     </body>
